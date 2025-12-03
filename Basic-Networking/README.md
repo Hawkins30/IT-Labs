@@ -1,3 +1,25 @@
+# Lab 4 — Basic Networking: IP Address, DNS, and Default Gateway
+
+## Purpose
+This lab helps me understand basic computer networking by checking my IP address, DNS servers, and default gateway, and testing network connectivity. These skills are used daily in IT support and troubleshooting.
+
+## Tools Used
+- Windows 11
+- Command Prompt
+- Network Settings
+
+## Steps Taken
+
+### 1. Viewing Network Adapter Information
+I opened **Command Prompt** and typed: ipconfig
+
+This showed:
+- My IPv4 address  
+- My Subnet Mask  
+- My Default Gateway  
+
+### 2. Viewing DNS Server Information
+In Command Prompt I typed: ipconfig /all
 
 This displayed:
 - DNS servers  
@@ -42,3 +64,6 @@ Screenshots are included in the `screenshots` folder:
 - The difference between internal LAN connectivity and internet connectivity  
 - How DNS works and how to test if it’s failing  
 - How to troubleshoot basic network problems using ping and ipconfig  
+
+
+
