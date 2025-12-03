@@ -1,4 +1,4 @@
-# Lab 2 — Installing Ubuntu Linux in VirtualBox
+# Lab 6 — Installing Ubuntu Linux in VirtualBox
 
 ## Purpose
 This lab shows how to install Ubuntu Linux inside a VirtualBox virtual machine. This provides a safe environment for learning Linux, practising command-line skills, and understanding open-source operating systems used in IT support and server administration.
