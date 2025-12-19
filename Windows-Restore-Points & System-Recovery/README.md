@@ -1,84 +1,63 @@
 # Lab 14 — Windows Restore Points & System Recovery
 
 ## Purpose
-This lab demonstrates how to create, configure, and restore Windows System Restore Points.  
-Restore Points allow IT technicians to revert a system back to a previous stable state after system changes, software issues, misconfiguration, or user error.
+
+The purpose of this lab is to demonstrate how to create, configure, and use Windows System Restore Points on a Windows 10 system. This process allows IT support technicians to safely revert a system to a previous stable state after software issues, misconfiguration, or user error, without affecting personal files.
 
 ## Tools Used
-- Windows 10 Virtual Machine  
-- System Protection (System Restore)  
-- Windows Recovery Tools
 
----
+- Windows 10 Virtual Machine
+- System Protection (System Restore)
+- Windows Recovery Tools
 
 ## Steps Performed
 
-### **1. Open System Protection**
-- Searched for **“Create a restore point”** in the Start Menu.  
-- Opened **System Properties → System Protection**.  
-**Screenshot 1:** System Protection tab open.
+### 1. Opened System Protection
 
----
+- Searched for **Create a restore point** in the Start Menu
+- Opened **System Properties → System Protection**
 
-### **2. Enable System Protection**
-- Selected **C: (System)**.  
-- Clicked **Configure**.  
-- Enabled: **Turn on system protection**.  
-- Set **Max Usage** to 5%.  
-- Applied settings.  
-**Screenshot 2:** Protection enabled for C:.
+### 2. Enabled System Protection
 
----
+- Selected **C: (System)**
+- Clicked **Configure**
+- Enabled **Turn on system protection**
+- Set **Max Usage** to 5%
+- Applied and saved the configuration
 
-### **3. Create a Restore Point**
-- Clicked **Create…**  
-- Named restore point: **Before-Test**  
-- Restore point created successfully.  
-**Screenshot 3:** Confirmation message shown.
+### 3. Created a Restore Point
 
----
+- Clicked **Create**
+- Named the restore point **Before-Test**
+- Verified that the restore point was created successfully
 
-### **4. Make a System Change**
+### 4. Made a System Change
+
 - Created a test folder named **RestoreTest** on the Desktop  
-  (or optionally installed a small program).  
-**Screenshot 4:** Change visible on the system.
+  *(This represents a system or user-level change that may need to be reverted)*
 
----
+### 5. Performed System Restore
 
-### **5. Perform System Restore**
-- Opened **System Restore…**  
-- Selected restore point **Before-Test**.  
-- Followed wizard → **Next → Finish**.  
-- VM rebooted and restored to previous state.  
-**Screenshot 5:** System Restore wizard before restore.  
-**Screenshot 6:** Evidence that the test change was removed after restore.
+- Opened **System Restore**
+- Selected the restore point **Before-Test**
+- Followed the wizard (**Next → Finish**)
+- System rebooted and restored to the previous state
 
----
+## Screenshots
 
-## Outcome
-✔ System protection was successfully enabled.  
-✔ Restore point created and verified.  
-✔ System changes were reverted using System Restore.  
-✔ Windows recovery process fully tested.
+Screenshots are stored in the `screenshots` folder and include:
 
-This demonstrates key A+ troubleshooting skills:  
-- Using restore points to undo system issues  
-- Understanding recovery features  
-- Verifying system state before and after restore  
+1. System Protection tab open
+2. System Protection enabled for C:
+3. Restore point creation confirmation
+4. Test system change visible
+5. System Restore wizard before restore
+6. Test change removed after restore
 
----
+## What I Learned
 
-## Folder Structure
-
-Lab-14-Restore-Points/
-│── screenshots/
-│── README.md
-
-
----
-
-## Status
-**Lab Completed Successfully ✅**
-
-## Folder Structure
-
+- How to enable and configure Windows System Protection
+- How to create and name restore points
+- How to revert a system to a previous state using System Restore
+- How technicians use restore points for troubleshooting and recovery
+- How to verify system state before and after recovery
