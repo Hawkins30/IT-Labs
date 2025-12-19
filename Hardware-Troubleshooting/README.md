@@ -1,51 +1,81 @@
-# Lab 3 — Hardware Troubleshooting Case Study
+# Lab 3 — Hardware Troubleshooting (Disk Performance Issue)
 
-## Issue Description
-A user reports that their Windows 11 laptop has become extremely slow. Applications take a long time to open, and the system sometimes freezes for several seconds.
+## Lab Objective
+Demonstrate a structured approach to diagnosing and resolving system performance issues caused by hardware and storage constraints in a Windows environment.
+
+---
+
+## Scenario
+A user reports that their Windows 11 laptop is extremely slow. Applications take a long time to open, and the system occasionally freezes for several seconds during normal use.
+
+---
+
+## Environment
+- **Operating System:** Windows 11  
+- **Device Type:** Laptop  
+- **User Context:** Single-user workstation  
+- **Tools Used:**
+  - Task Manager
+  - Windows Event Viewer
+  - Storage Settings
+  - Disk Cleanup
+  - Windows Security
+
+---
 
 ## Symptoms Observed
-- Slow system performance  
+- Slow overall system performance  
 - Long application load times  
-- Occasional system freezing  
-- High disk usage shown in Task Manager  
+- Intermittent system freezing  
+- Disk usage consistently near 100% in Task Manager  
 
-## Tools Used for Diagnosis
-- Task Manager  
-- Windows Event Viewer  
-- Storage Settings  
-- Disk Cleanup  
-- Windows Security Scan  
+---
 
-## Steps Taken to Diagnose the Problem
-1. Opened **Task Manager** and checked CPU, RAM, and Disk usage.  
-2. Observed **Disk usage at 100%**, even when no heavy apps were running.  
-3. Checked **Storage** and saw the device had less than 2GB free space.  
-4. Opened **Event Viewer** and found warnings about disk fragmentation and low disk space.  
+## Investigation Steps
+1. Checked CPU, memory, and disk usage using Task Manager.  
+2. Identified sustained high disk utilisation despite minimal application activity.  
+3. Reviewed Storage Settings and confirmed less than 2GB of free disk space.  
+4. Examined Event Viewer logs and found warnings related to low disk space and disk performance.  
+
+---
 
 ## Root Cause
-The laptop was extremely low on available storage. Windows uses disk space for virtual memory (pagefile), so when storage is nearly full, performance becomes extremely slow.
+The system was critically low on available storage. Windows relies on free disk space for virtual memory (pagefile operations). With insufficient free space, disk I/O became saturated, resulting in severe performance degradation.
 
-## Steps Taken to Fix the Problem
-1. Ran **Disk Cleanup** and removed temporary files.  
-2. Uninstalled unused applications taking up large amounts of space.  
-3. Moved large personal files (videos/photos) to cloud storage.  
-4. Restarted the system.
+---
+
+## Resolution Steps
+1. Ran Disk Cleanup to remove temporary and unnecessary system files.  
+2. Uninstalled unused applications consuming significant storage.  
+3. Moved large personal files (photos and videos) to cloud storage.  
+4. Restarted the system to apply changes and reset system resources.  
+
+---
+
+## Verification
+- Free disk space increased from approximately **1.8GB to 21GB**  
+- Disk utilisation returned to normal operating levels  
+- System responsiveness improved significantly  
+- No further freezing observed after reboot  
+
+---
 
 ## Outcome
-- Available storage increased from 1.8GB → 21GB  
-- Disk usage dropped to normal levels  
-- System performance returned to normal  
-- No freezing or slowdowns after reboot  
+The user’s system performance returned to normal, with stable disk usage and improved responsiveness during everyday tasks.
 
-## What I Learned
-- Low disk space can cause 100% disk usage and severely impact performance  
-- How to diagnose system slowness using Task Manager  
-- How Windows uses the pagefile and why storage matters  
-- How to perform basic system cleanup to restore performance  
+---
 
-## Screenshots
-All screenshots are saved in the `screenshots` folder and include:
+## Key Takeaways
+- Low disk space can cause high disk usage and system instability  
+- Task Manager and Event Viewer are effective tools for diagnosing performance issues  
+- Maintaining adequate free storage is critical for Windows system health  
+
+---
+
+## Evidence
+Screenshots documenting each stage of diagnosis and resolution are stored in the `/screenshots` directory, including:
 - Task Manager showing high disk usage  
-- Storage menu showing low disk space  
-- Disk Cleanup window  
-- After-fix screenshot showing normal disk usage  
+- Storage settings showing low available disk space  
+- Disk Cleanup execution  
+- Post-fix system performance
+
