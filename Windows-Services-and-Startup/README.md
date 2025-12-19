@@ -1,75 +1,95 @@
-# Lab 10 – Windows Services & Startup Optimisation
+# Lab 10 — Windows Services & Startup Optimisation
 
 ## Purpose
-The purpose of this lab is to demonstrate the ability to manage Windows startup programs, configure Windows services, and use advanced Sysinternals tools to analyse system performance. These are essential troubleshooting skills in IT support and helpdesk environments.
+
+The purpose of this lab is to demonstrate the ability to manage Windows startup applications, configure and troubleshoot Windows services, and analyse startup behaviour using advanced Sysinternals tools. These are core troubleshooting skills required in IT support, helpdesk, and junior system administration roles, particularly when diagnosing slow boot times, login delays, or background service issues.
+
+---
 
 ## Tools Used
+
 - Windows 10 Virtual Machine  
 - Task Manager  
-- Services Console (services.msc)  
+- Services Console (`services.msc`)  
 - Sysinternals Autoruns (Microsoft)
 
 ---
 
 ## Steps Performed
 
-### 1. Reviewed Startup Applications  
-Opened Task Manager → Startup to view all programs that run automatically at login. Checked their startup impact to identify potential performance issues.
+### 1. Reviewed Startup Applications
 
-*Screenshot: Startup apps list*
+Opened **Task Manager → Startup** to review all applications configured to run automatically at user login.  
+Checked the **Startup Impact** column to identify applications that could negatively affect boot and login performance.
 
----
-
-### 2. Disabled a Non-Essential Startup Item  
-Disabled Microsoft OneDrive to reduce login time and optimise system performance.
-
-*Screenshot: Disabled OneDrive*
+**Screenshot:** Startup applications list with impact ratings.
 
 ---
 
-### 3. Opened the Windows Services Console  
-Launched services.msc to view Windows background services, their states, and their roles in system operation.
+### 2. Disabled a Non-Essential Startup Item
 
-*Screenshot: Services console*
+Disabled **Microsoft OneDrive** from startup to reduce unnecessary background processes and improve login performance.  
+Confirmed the status changed to **Disabled**.
 
----
-
-### 4. Restarted a Safe Windows Service  
-Restarted a non-critical service (e.g., Print Spooler, Windows Time, BITS, or Themes) to demonstrate safe troubleshooting of service-related issues.
-
-*Screenshot: Service restart*
+**Screenshot:** OneDrive disabled in Startup tab.
 
 ---
 
-### 5. Changed a Service Startup Type  
-Selected a safe optional service (e.g., Xbox Services, Bluetooth Support Service) and changed the Startup Type to Manual to demonstrate understanding of service configuration.
+### 3. Opened the Windows Services Console
 
-*Screenshot: Startup type changed*
+Launched the **Services Console (`services.msc`)** to review installed Windows services, their current state (Running / Stopped), and startup type (Automatic / Manual / Disabled).  
+Reviewed service descriptions to understand their function and importance.
+
+**Screenshot:** Services console overview.
 
 ---
 
-### 6. Analysed Startup Items Using Sysinternals Autoruns  
-Used Autoruns to inspect hidden startup entries not visible in Task Manager. Focused on the Logon / Winlogon tab to review what executes when the user logs in.
+### 4. Restarted a Safe Windows Service
 
-*Screenshot: Autoruns Logon tab*
+Restarted a **non-critical Windows service** (e.g. Print Spooler, Windows Time, BITS, or Themes) to demonstrate safe service troubleshooting procedures.  
+Verified the service restarted successfully without system instability.
+
+**Screenshot:** Service restart action.
+
+---
+
+### 5. Changed a Service Startup Type
+
+Selected a **safe, optional service** (e.g. Xbox Services or Bluetooth Support Service) and changed its **Startup Type** from *Automatic* to *Manual*.  
+This demonstrates understanding of how startup types affect system behaviour and resource usage.
+
+**Screenshot:** Startup type configuration change.
+
+---
+
+### 6. Analysed Startup Items Using Sysinternals Autoruns
+
+Used **Sysinternals Autoruns** to inspect startup entries not visible in Task Manager.  
+Focused on the **Logon** and **Winlogon** tabs to review processes that execute automatically when a user signs in.
+
+**Screenshot:** Autoruns Logon tab showing startup entries.
 
 ---
 
 ## What I Learned
-- How startup programs impact system performance  
-- How to disable or manage startup applications  
-- How different service states and startup types work  
-- How to safely restart Windows services  
+
+- How startup programs impact Windows boot and login performance  
+- How to enable, disable, and manage startup applications safely  
+- How Windows services operate and differ by startup type  
+- How to restart services as part of troubleshooting workflows  
 - How to use Sysinternals Autoruns for advanced startup analysis  
-- How to identify potential performance or security issues related to automatic startup behaviour
+- How to identify unnecessary or potentially problematic startup behaviour
+
+---
 
 ## Why This Lab Matters
-These tasks closely mirror real-world IT support responsibilities, including:
 
-- Fixing slow PCs  
-- Troubleshooting login delays  
-- Diagnosing misconfigured or failing services  
-- Detecting unnecessary or suspicious startup processes  
+These tasks closely reflect real-world IT support responsibilities, including:
 
-This lab strengthens core skills required for helpdesk and junior system administration roles.
+- Troubleshooting slow system startup or login delays  
+- Optimising system performance for end users  
+- Diagnosing service-related issues  
+- Identifying unnecessary or suspicious startup processes  
+- Applying safe changes without disrupting system stability  
 
+This lab strengthens essential skills required for **helpdesk**, **desktop support**, and **junior system administration** roles.
