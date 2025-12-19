@@ -1,69 +1,114 @@
-# Lab 4 — Basic Networking: IP Address, DNS, and Default Gateway
+# Lab 4 — Basic Networking (IP Address, DNS, and Default Gateway)
 
-## Purpose
-This lab helps me understand basic computer networking by checking my IP address, DNS servers, and default gateway, and testing network connectivity. These skills are used daily in IT support and troubleshooting.
+## Lab Objective
+Demonstrate a structured approach to identifying and verifying basic network configuration on a Windows system, including IP addressing, DNS configuration, default gateway, and connectivity testing.
 
-## Tools Used
-- Windows 11
-- Command Prompt
-- Network Settings
+---
 
-## Steps Taken
+## Scenario
+A user reports potential network connectivity issues and requires verification of their network configuration and internet access. The task is to confirm that the device is correctly configured and can communicate both within the local network and with external resources.
+
+---
+
+## Environment
+- **Operating System:** Windows 11  
+- **Device Type:** Workstation  
+- **Network Type:** Local Area Network (LAN)  
+- **Tools Used:**
+  - Command Prompt
+  - Windows Network Settings
+
+---
+
+## Investigation Steps
 
 ### 1. Viewing Network Adapter Information
-I opened **Command Prompt** and typed: ipconfig
+Opened Command Prompt and ran:
+"ipconfig"
 
-This showed:
-- My IPv4 address  
-- My Subnet Mask  
-- My Default Gateway  
+Reviewed the following:
+- IPv4 address  
+- Subnet mask  
+- Default gateway  
 
-### 2. Viewing DNS Server Information
-In Command Prompt I typed: ipconfig /all
+This confirmed the device had a valid IP address assigned.
 
-This displayed:
-- DNS servers  
+---
+
+### 2. Viewing DNS Server Configuration
+Ran:
+"ipconfig /all"
+
+Verified:
+- DNS server addresses  
 - DHCP server  
-- Complete network configuration  
+- Full network adapter configuration  
 
-### 3. Checking Network Settings (GUI)
-I opened:
-**Settings → Network & Internet → Properties (on active network)**
+This confirmed DNS was correctly assigned via DHCP.
 
-This showed:
+---
+
+### 3. Verifying Network Settings via GUI
+Navigated to:
+"Settings → Network & Internet → Properties (active connection)"
+
+Confirmed:
 - Connection type  
 - IPv4 address  
-- Gateway  
-- DNS server  
+- Default gateway  
+- DNS server configuration  
+
+This ensured GUI and CLI configurations matched.
+
+---
 
 ### 4. Testing Internet Connectivity
-I used the following commands:
+Executed the following commands:
+"ping 8.8.8.8"
+"ping google.com"
 
-`ping 8.8.8.8` — Tests connection to Google DNS  
-`ping google.com` — Tests DNS and internet connection  
+Results:
+- Successful ping to `8.8.8.8` confirmed external network connectivity  
+- Successful ping to `google.com` confirmed DNS resolution was working  
 
-### 5. Testing Gateway Reachability
-I pinged my gateway:
+---
 
-`ping <gateway IP>`  
-(e.g., `ping 192.168.1.1`)
+### 5. Testing Default Gateway Reachability
+Pinged the default gateway:
+"ping <gateway IP>"
+(e.g. `ping 192.168.1.1`)
 
-If the gateway responds, the local network is working.
+A successful response confirmed local network connectivity.
 
-## Screenshots
-Screenshots are included in the `screenshots` folder:
-1. `ipconfig` output  
-2. `ipconfig /all` showing DNS  
-3. Network & Internet Properties window  
-4. Successful ping to 8.8.8.8  
-5. Successful ping to google.com  
-6. Ping to gateway  
+---
 
-## What I Learned
-- How to find my IP address, DNS servers, and gateway  
-- The difference between internal LAN connectivity and internet connectivity  
-- How DNS works and how to test if it’s failing  
-- How to troubleshoot basic network problems using ping and ipconfig  
+## Verification
+- Device received a valid IP address  
+- DNS servers were correctly assigned  
+- Default gateway was reachable  
+- Internet connectivity confirmed  
+- DNS resolution functioning as expected  
 
+---
 
+## Outcome
+The system was confirmed to be correctly configured for network access, with full local and internet connectivity.
 
+---
+
+## Key Takeaways
+- How to identify IP address, DNS servers, and default gateway  
+- Difference between local network connectivity and internet connectivity  
+- How to test DNS functionality using command-line tools  
+- How to verify network configuration using both CLI and GUI methods  
+
+---
+
+## Evidence
+Screenshots documenting each step are stored in the `/screenshots` directory, including:
+- `ipconfig` output  
+- `ipconfig /all` showing DNS configuration  
+- Network & Internet Properties window  
+- Successful ping to `8.8.8.8`  
+- Successful ping to `google.com`  
+- Successful ping to the default gateway  
