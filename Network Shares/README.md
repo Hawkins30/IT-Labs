@@ -1,79 +1,145 @@
 # Lab 9 — Network Shares & SMB Permissions (Windows → Linux)
 
-## Purpose
-The purpose of this lab is to demonstrate the creation, configuration, and testing of SMB (Server Message Block) shared folders in Windows 10, as well as verifying access from a Linux client. This is a core IT support skill used in businesses for shared drives, team folders, and secure file access.
-
-## Tools Used
-- Windows 10 Virtual Machine
-- Ubuntu Linux Virtual Machine
-- SMB (Server Message Block)
-- NTFS Permissions
-- Windows Share Permissions
+## Lab Objective
+Demonstrate the creation, configuration, and testing of Windows SMB shared folders, including layered share and NTFS permissions, and verify access from a Linux client. This mirrors real-world file sharing and access control tasks performed in IT support environments.
 
 ---
 
-## Part 1 — Windows SMB Share Setup
+## Scenario
+A support technician is required to configure a shared network folder on a Windows system, apply appropriate access permissions for different user roles, and verify access from a Linux workstation. The goal is to ensure secure, role-based access to shared resources.
 
-### 1. Created Shared Folder
-I created a folder named **SharedFolder** and enabled file sharing through:
-- Properties → Sharing → Advanced Sharing  
-- Share name: *SharedFolder*
+---
+
+## Environment
+- **Windows 10 Virtual Machine** (SMB host)  
+- **Ubuntu Linux Virtual Machine** (client)  
+- **Protocols & Technologies:**
+  - SMB (Server Message Block)
+  - NTFS permissions
+  - Windows share permissions
+
+---
+
+## Part 1 — Windows SMB Share Configuration
+
+### 1. Created a Shared Folder
+Created a folder named:
+"SharedFolder"
+
+Enabled sharing via:
+"Properties → Sharing → Advanced Sharing"
+
+Configured the share name as:
+"SharedFolder"
+
+---
 
 ### 2. Configured Share Permissions
-- **StandardUser** → Read only  
-- **AdminUser** → Full Control  
+Applied the following share-level permissions:
+- **StandardUser:** Read  
+- **AdminUser:** Full Control  
+
+---
 
 ### 3. Configured NTFS Permissions
-Inside the Security tab:
-- **StandardUser** → Read & Execute, Read, List folder contents  
-- **AdminUser** → Full Control  
+Configured NTFS permissions under the **Security** tab:
 
-This ensures proper layered permissions (Share + NTFS).
+- **StandardUser:**  
+  - Read & Execute  
+  - Read  
+  - List folder contents  
+
+- **AdminUser:**  
+  - Full Control  
+
+This ensured correct layered permissions, with NTFS permissions enforcing final access control.
+
+---
 
 ### 4. Created a Test File
-Created `testfile.txt` inside the shared folder for testing access.
+Created a test file within the shared folder:
+"testfile.txt"
 
-### 5. Retrieved the Windows IP Address
-Using `ipconfig`, I identified the VM’s IPv4 address to access over SMB.
+This file was used to validate read and write permissions.
+
+---
+
+### 5. Identified the Windows IP Address
+Used the following command to identify the Windows VM’s IPv4 address:
+"
+This file was used to validate read and write permissions.
+
+---
+
+### 5. Identified the Windows IP Address
+Used the following command to identify the Windows VM’s IPv4 address:
+"ipconfig"
+
+This IP address was required for SMB access from the Linux client.
 
 ---
 
 ## Part 2 — Accessing the SMB Share from Ubuntu Linux
 
-### 1. Connected via SMB
-From Ubuntu Files → Other Locations:
-smb://<windows-ip-address>/SharedFolder
+### 1. Connected to the SMB Share
+From Ubuntu, navigated to:
+"Files → Other Locations"
 
+Connected using:
+"smb://<Windows_IP>/SharedFolder"
+
+---
 
 ### 2. Tested Access as StandardUser
-- Successfully opened the folder  
-- Could **read** files  
-- Could **NOT edit** or save changes (correct behaviour)
+Logged in using **StandardUser** credentials and verified:
+- Successful access to the shared folder  
+- Ability to read files  
+- Inability to edit or save changes (expected behaviour)  
+
+---
 
 ### 3. Tested Access as AdminUser
+Logged in using **AdminUser** credentials and verified:
 - Full read/write access  
-- Successfully edited and saved files  
+- Ability to edit and save files successfully  
 
 ---
 
-## Screenshots
-Stored in the `screenshots` folder:
-1. Share permissions window  
-2. NTFS permissions  
-3. Windows IP address (ipconfig)  
-4. Ubuntu SMB login prompt  
-5. Shared folder visible in Ubuntu  
-6. StandardUser “permission denied” on edit  
-7. AdminUser editing file successfully  
+## Verification
+- SMB share accessible from Linux client  
+- Share permissions applied correctly  
+- NTFS permissions enforced as expected  
+- Read-only and full-access roles validated  
+- Cross-platform access functioning correctly  
 
 ---
 
-## What I Learned
-- How to configure Windows SMB shares  
-- Difference between Share Permissions and NTFS Permissions  
-- How layered permissions interact (NTFS overrides share)  
-- How to access Windows shares from Linux  
+## Outcome
+The shared folder was successfully configured with secure, role-based access. Permissions behaved as expected across Windows and Linux systems, demonstrating correct implementation of SMB sharing and layered permissions.
+
+---
+
+## Key Takeaways
+- How to configure Windows SMB shared folders  
+- Difference between share permissions and NTFS permissions  
+- How layered permissions interact (NTFS overrides share permissions)  
+- How to access Windows shares from Linux systems  
 - How to test and verify read/write access  
-- How to troubleshoot permission issues across OS platforms  
+- How to troubleshoot cross-platform permission issues  
 
-This lab demonstrates real-world file sharing and security administration skills used daily in IT support.
+---
+
+## Evidence
+Screenshots documenting each stage are stored in the `/screenshots` directory, including:
+- Share permissions configuration  
+- NTFS permissions settings  
+- Windows IP address (`ipconfig`)  
+- Ubuntu SMB login prompt  
+- Shared folder visible in Ubuntu  
+- StandardUser permission denied when editing  
+- AdminUser successfully editing files  
+
+---
+
+## Why This Lab Matters
+Network shares and permissions are a core responsibility of IT support teams. This lab demonstrates real-world file sharing, access control, and cross-platform troubleshooting skills used daily in business environments.
