@@ -1,108 +1,149 @@
-# Lab 11 – Event Viewer & System Logs
+# Lab 11 — Event Viewer & System Logs
 
-## Purpose
-The purpose of this lab is to demonstrate the ability to access, analyse, filter, and export Windows system logs using the Event Viewer. These skills are essential for troubleshooting system issues, diagnosing errors, and supporting users in real IT helpdesk environments.
-
-## Tools Used
-- Windows 10  
-- Event Viewer (eventvwr.msc)
+## Lab Objective
+Demonstrate the ability to access, analyse, filter, and export Windows system and application logs using Event Viewer in order to support structured troubleshooting and escalation in an IT support environment.
 
 ---
 
-## Steps Performed
+## Scenario
+A support technician is required to investigate potential system and application issues on a Windows workstation by reviewing system logs, identifying relevant errors and warnings, and preparing log data for further analysis or escalation.
+
+---
+
+## Environment
+- **Operating System:** Windows 10  
+- **Tool Used:** Event Viewer (`eventvwr.msc`)
+
+---
+
+## Investigation Steps
 
 ### 1. Opened Event Viewer
-Used Win + R → `eventvwr.msc` to open the Windows Event Viewer and display the main console.
+Launched Event Viewer using:
+"Win + R → eventvwr.msc"
 
-*Screenshot: Event Viewer main window*
+This displayed the main Event Viewer console.
 
 ---
 
-### 2. Viewed System Logs
-Navigated to **Windows Logs → System** to review system-level events such as hardware issues, driver problems, and service failures.
+### 2. Reviewed System Logs
+Navigated to:
+"Windows Logs → System"
 
-*Screenshot: System log with errors/warnings visible*
+Reviewed system-level events related to:
+- Hardware issues  
+- Driver problems  
+- Service failures  
+
+This log is commonly used to diagnose system stability and boot-related issues.
 
 ---
 
 ### 3. Investigated a System Error
-Selected a red error entry and reviewed its detailed information, including:
+Selected an error-level event and reviewed detailed information including:
 - Event ID  
 - Source  
 - Log level  
 - Description  
 
-This demonstrates the ability to understand and interpret log data.
-
-*Screenshot: System error details*
+This information is critical for identifying the cause of system issues and researching known errors.
 
 ---
 
-### 4. Opened Application Logs
-Navigated to **Windows Logs → Application** to examine software-related errors and warnings, such as application crashes or service issues.
+### 4. Reviewed Application Logs
+Navigated to:
+"Windows Logs → Application"
 
-*Screenshot: Application log error/warning*
+Examined software-related events such as:
+- Application crashes  
+- Application warnings  
+- Service-related application issues  
+
+This log is used to diagnose problems affecting installed software.
 
 ---
 
 ### 5. Filtered the System Log
-Right-clicked **System → Filter Current Log…** and filtered by:
-- Error  
-- Warning  
+Applied a filter to the System log using:
+"Filter Current Log…"
 
-This shows the ability to quickly isolate important issues in a busy log.
+Filtered by:
+- Event Level: Error  
+- Event Level: Warning  
 
-*Screenshot: Filtered log showing only errors and warnings*
+This allowed rapid identification of critical issues within a large volume of log entries.
 
 ---
 
 ### 6. Created a Custom View
 Created a custom view under:
-**Custom Views → Create Custom View**
+"Custom Views → Create Custom View"
 
-Settings:
+Configured the view with the following settings:
 - Logged: Last hour  
-- Event Levels: Error + Warning  
-- Logs: System + Application  
+- Event Levels: Error and Warning  
+- Logs: System and Application  
 
-Named it:  
-`Errors and Warnings – Last Hour`
+Saved the view as:
+"Errors and Warnings — Last Hour"
 
-This is a common task in real IT troubleshooting.
-
-*Screenshot: Custom View displayed in left pane*
+Custom views are commonly used in real IT environments to quickly monitor recent issues.
 
 ---
 
 ### 7. Exported the System Log
-Right-clicked **Windows Logs → System → Save All Events As…**  
-Saved the log as `system-log.evtx` on the desktop.
+Exported system logs using:
+"Windows Logs → System → Save All Events As…"
 
-This demonstrates the ability to export logs for escalation or documentation purposes.
+Saved the file as:
+"system-log.evtx"
 
-*Screenshot: Saved .evtx file*
+Exporting logs is essential for documentation, escalation, and collaboration with senior support teams.
 
 ---
 
-## What I Learned
-- How to navigate Windows Event Viewer  
-- Differences between System, Application, and other log types  
-- How to interpret log details such as Event IDs and sources  
-- How to filter logs to find critical issues quickly  
+## Verification
+- System and application logs successfully accessed  
+- Errors and warnings identified and reviewed  
+- Filters and custom views applied correctly  
+- Logs exported in `.evtx` format for further analysis  
+
+---
+
+## Outcome
+System and application log data was successfully analysed, filtered, and exported, demonstrating effective use of Event Viewer for troubleshooting and escalation purposes.
+
+---
+
+## Key Takeaways
+- How to navigate and use Windows Event Viewer  
+- Differences between System and Application logs  
+- How to interpret Event IDs, sources, and log levels  
+- How to filter logs to identify critical issues quickly  
 - How to create and save custom views for rapid troubleshooting  
 - How to export logs for analysis or escalation  
 
 ---
 
+## Evidence
+Screenshots documenting each step are stored in the `/screenshots` directory, including:
+- Event Viewer main console  
+- System log with errors and warnings visible  
+- Detailed view of a system error  
+- Application log entries  
+- Filtered log view  
+- Custom view displayed in the navigation pane  
+- Exported `.evtx` log file  
+
+---
+
 ## Why This Lab Matters
-Windows Event Viewer is one of the most important troubleshooting tools in IT support.  
-It is used to diagnose:
+Windows Event Viewer is one of the most important troubleshooting tools in IT support. It is routinely used to diagnose:
 - Service failures  
 - Driver issues  
 - System crashes  
 - Application errors  
 - Boot problems  
-- Network issues  
+- Network-related issues  
 
-Mastering Event Viewer is essential for both CompTIA A+ and real-world helpdesk roles.
-
+Proficiency with Event Viewer is essential for both entry-level IT support roles and real-world helpdesk environments.
