@@ -1,53 +1,126 @@
 # Lab 2 — Basic Windows Command Line & PowerShell
 
-## Purpose
-This lab helps me practice basic Windows command-line and PowerShell commands. These are common tools used in IT support for checking networks, diagnosing problems, and getting system information.
+## Lab Objective
+Demonstrate practical use of Windows Command Prompt and PowerShell to gather system information, test connectivity, and inspect running processes and services in a Windows environment.
 
-## Tools Used
-- Windows 11
-- Command Prompt (run as Administrator)
-- PowerShell (run as Administrator)
+---
 
-## Commands I Used and What They Do
+## Scenario
+A support technician needs to collect system and network information from a Windows workstation, verify internet connectivity, and review running processes and services using command-line tools.
 
-### Command Prompt (CMD)
-1. `ipconfig`  
-   - Shows my computer’s network information (IP address, gateway).
+---
 
-2. `ping google.com`  
-   - Tests if my internet connection can reach Google.
+## Environment
+- **Operating System:** Windows 11  
+- **Device Type:** Workstation  
+- **Tools Used:**
+  - Command Prompt (run as Administrator)
+  - PowerShell (run as Administrator)
 
-3. `tracert google.com`  
-   - Shows the path my connection takes to reach Google.
+---
 
-4. `systeminfo`  
-   - Shows a summary of my system (OS version, memory, updates, etc).
+## Investigation Steps
 
-### PowerShell
-1. `Get-Process`  
-   - Shows all running programs and background processes.
+### 1. Network Configuration (Command Prompt)
+Ran the following command:
+"ipconfig"
 
-2. `Get-Service`  
-   - Shows Windows services and whether they are running or stopped.
+Reviewed:
+- IP address
+- Default gateway
 
-3. (Optional) `Get-ComputerInfo`  
-   - Shows detailed system information.
+This confirmed the system had valid network configuration.
 
-## Screenshots
-All screenshots are saved in the **screenshots** folder and include:
-1. Command Prompt open  
-2. Output of `ipconfig`  
-3. Output of `ping google.com`  
-4. Output of `tracert google.com`  
-5. Output of `systeminfo`  
-6. PowerShell open  
-7. Output of `Get-Process`  
-8. Output of `Get-Service`  
-9. (Optional) Output of `Get-ComputerInfo`
+---
 
-## What I Learned
-- How to open CMD and PowerShell as an administrator  
-- How to check my computer’s network information  
-- How to test internet connectivity  
-- The difference between CMD commands and PowerShell commands  
-- Basic tools used every day by IT support technicians  
+### 2. Internet Connectivity Test
+Ran:
+"ping google.com"
+
+This verified that the system could reach an external host, confirming basic internet connectivity.
+
+---
+
+### 3. Network Path Analysis
+Executed:
+tracert google.com
+
+This displayed the route taken by network traffic, helping identify where connectivity issues may occur if a failure is present.
+
+---
+
+### 4. System Information Review
+Ran:
+"systeminfo"
+
+Collected:
+- Operating system version
+- Installed memory
+- System uptime
+- Patch and update information
+
+This provided a high-level overview of system health and configuration.
+
+---
+
+### 5. Process Inspection (PowerShell)
+Opened PowerShell and ran:
+"Get-Process"
+
+Reviewed all active applications and background processes to understand system workload.
+
+---
+
+### 6. Service Status Review (PowerShell)
+Executed:
+"Get-Service"
+
+Checked:
+- Running services
+- Stopped services
+
+This is useful for identifying service-related issues during troubleshooting.
+
+---
+
+### 7. Detailed System Information (Optional)
+Ran:
+"Get-ComputerInfo"
+
+Retrieved detailed hardware and operating system information for deeper diagnostics.
+
+---
+
+## Verification
+- Network configuration successfully retrieved via CLI  
+- Internet connectivity confirmed  
+- Network routing information obtained  
+- System details collected using command-line tools  
+- Running processes and services successfully reviewed  
+
+---
+
+## Outcome
+The system’s network status, connectivity, and operational state were successfully verified using Command Prompt and PowerShell.
+
+---
+
+## Key Takeaways
+- How to use Command Prompt and PowerShell for system diagnostics  
+- How to retrieve network and system information using CLI tools  
+- How to test connectivity and trace network paths  
+- Differences between CMD and PowerShell use cases in IT support  
+
+---
+
+## Evidence
+Screenshots documenting each step are stored in the `/screenshots` directory, including:
+- Command Prompt opened as Administrator  
+- Output of `ipconfig`  
+- Output of `ping google.com`  
+- Output of `tracert google.com`  
+- Output of `systeminfo`  
+- PowerShell session opened  
+- Output of `Get-Process`  
+- Output of `Get-Service`  
+- (Optional) Output of `Get-ComputerInfo`
