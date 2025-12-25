@@ -1,0 +1,142 @@
+# Lab — Microsoft Entra ID: Identity Management, MFA & Security Defaults
+
+## Purpose
+
+The purpose of this lab is to demonstrate hands-on experience with Microsoft Entra ID (Azure Active Directory), including tenant setup, user and group management, role-based access control, password resets, multi-factor authentication (MFA), and security monitoring. This lab reflects common real-world identity and access management tasks performed by IT support and junior cloud administrators in Microsoft 365 environments.
+
+---
+
+## Tools Used
+
+- Microsoft Entra ID (Azure Active Directory)
+- Microsoft 365 Admin Center
+- Microsoft Entra Admin Center
+- Security Defaults
+- Sign-in Logs
+
+---
+
+## Environment Setup
+
+- **Tenant Type:** Microsoft Entra ID (Free / Trial)
+- **Tenant Region:** United Kingdom
+- **Admin Account:** Dedicated tenant admin (cloud-only)
+- **User Type:** Cloud-only users
+- **Security Model:** Security Defaults enabled
+
+The tenant was created using a free Microsoft 365 trial with a dedicated administrative account to separate personal identity from directory administration.
+
+---
+
+## Steps Performed
+
+### 1. Created Entra ID Tenant and Admin Account
+
+- Created a new Microsoft Entra ID tenant.
+- Configured a dedicated cloud admin account for tenant management.
+- Verified Global Administrator role assignment.
+
+**Screenshot included:** Entra ID tenant overview and admin role confirmation
+
+---
+
+### 2. Created Users and Security Groups
+
+- Created a standard cloud user:
+"john.smith@<tenant>.onmicrosoft.com"
+- Created a security group:
+"IT-Support"
+
+- Added the user to the IT-Support group.
+
+This demonstrates basic cloud identity lifecycle management.
+
+**Screenshot included:** User creation and group membership
+
+---
+
+### 3. Assigned Roles Using Group-Based Access
+
+- Assigned the **Helpdesk Administrator** role to the **IT-Support** group.
+- Verified that the user inherited the role through group membership rather than direct assignment.
+
+This reflects best practice for scalable and secure role management.
+
+**Screenshot included:** Role assignment via group and inherited user role
+
+---
+
+### 4. Performed Password Reset and MFA Configuration
+
+- Reset the user password using Entra ID.
+- Required password change at next sign-in.
+- Enabled Multi-Factor Authentication using Security Defaults.
+
+This simulates a common IT support scenario involving account recovery and security enforcement.
+
+**Screenshot included:** Password reset confirmation and authentication methods
+
+---
+
+### 5. Reviewed Sign-In Logs for Troubleshooting
+
+- Accessed user sign-in logs within Microsoft Entra ID.
+- Reviewed available authentication activity.
+- Noted that absence of logs in a new tenant indicates no prior sign-in activity.
+
+This demonstrates understanding of authentication auditing and security investigation.
+
+**Screenshot included:** User sign-in logs
+
+---
+
+### 6. Enabled and Verified Security Defaults
+
+- Reviewed tenant-wide Security Defaults.
+- Confirmed Security Defaults were enabled to enforce MFA, block legacy authentication, and protect administrative accounts.
+
+This aligns with Microsoft-recommended security posture for small tenants and labs.
+
+**Screenshot included:** Security Defaults enabled
+
+---
+
+## Outcome
+
+- Entra ID tenant created and secured
+- Cloud users and groups managed successfully
+- Role-based access implemented using group assignments
+- Password reset and MFA enforced
+- Sign-in activity reviewed for security troubleshooting
+- Security Defaults enabled and verified
+
+---
+
+## What I Learned
+
+- How Microsoft Entra ID manages cloud identities
+- Differences between personal Microsoft accounts and tenant identities
+- Best practices for role assignment using groups
+- How MFA is enforced using Security Defaults
+- How to investigate authentication activity using sign-in logs
+- How identity and access management is handled in Microsoft 365 environments
+
+---
+
+## Why This Lab Matters
+
+Microsoft Entra ID is central to modern IT environments using Microsoft 365 and cloud-first identity models. This lab demonstrates practical skills required for first-line and junior IT roles, including:
+
+- User account support
+- Access control troubleshooting
+- Identity security enforcement
+- Admin portal navigation
+- Cloud authentication investigation
+
+These are core responsibilities in many UK-based IT support and service desk roles.
+
+---
+
+## Files & Screenshots
+
+All screenshots related to this lab are stored in the `/screenshots` folder.
